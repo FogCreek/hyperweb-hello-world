@@ -8,7 +8,7 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "main.coffee": {
       "path": "main.coffee",
-      "content": "# main.coffee\n\n## Let's setup a template, add some variables, and render it.\n\nTemplate = require \"./template\"\n\nelement = Template\n  name: \"Yo Yo Ma\"\n  interests: [\"parties\", \"violins\", \"yolo\"]\n\ndocument.body.appendChild element\n\n## Now we'll attach `style.styl` to it\n\nstyle = document.createElement \"style\"\nstyle.textContent = require \"./style\"\n\ndocument.head.appendChild style\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\n#Here we require a model and a template then combine them to create an element\n#to add to the DOM that let's us search Flikr using their JSON API.\n\nFlickr = require \"./flickr\"\nFlickrTemplate = require \"./templates/flickr\"\ndocument.body.appendChild FlickrTemplate Flickr()\n",
+      "content": "# main.coffee\n\n## Let's setup a template, add some variables, and render it.\n\nTemplate = require \"./template\"\n\nelement = Template\n  name: \"Yo Yo Ma\"\n  interests: [\"parties\", \"violins\", \"yolo\"]\n\ndocument.body.appendChild element\n\n## Now we'll attach `style.styl` to it\n\nstyle = document.createElement \"style\"\nstyle.textContent = require \"./style\"\ndocument.head.appendChild style\n\n\n\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\n#Here we require a model and a template then combine them to create an element\n#to add to the DOM that let's us search Flikr using their JSON API.\n\nFlickr = require \"./flickr\"\nFlickrTemplate = require \"./templates/flickr\"\ndocument.body.appendChild FlickrTemplate Flickr()\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -26,7 +26,7 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "template.haml": {
       "path": "template.haml",
-      "content": "%div\n  %h1 Hello\n  %h1 hello world\n  %p= @name\n  %h2 Welcome...\n  %p to the future!\n\n  %p= @interests\n  - @interests.forEach |interest|\n    %p= interest\n",
+      "content": "%div\n  %h1 Hello\n  %h1 hello world\n  %p= @name\n  %h2 Welcome...\n  %p to the future!\n  @interests.each  (interest) ->\n    %p= interest",
       "mode": "100644",
       "type": "blob"
     },
@@ -66,7 +66,7 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "template": {
       "path": "template",
-      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {}, function(__root) {\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"Hello\\n\");\n      }));\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"hello world\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.name);\n      }));\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Welcome...\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(\"to the future!\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.interests);\n      }));\n      this.interests.forEach | interest | __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(interest);\n      }));\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
+      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {}, function(__root) {\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"Hello\\n\");\n      }));\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"hello world\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.name);\n      }));\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Welcome...\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(\"to the future!\\n\");\n      }));\n      __root.buffer(\"@interests.each  (interest) ->\\n\");\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(interest);\n      }));\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
       "type": "blob"
     },
     "templates/flickr": {
