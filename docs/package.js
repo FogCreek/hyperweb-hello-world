@@ -174,7 +174,7 @@
     },
     "main.coffee": {
       "path": "main.coffee",
-      "content": "# main.coffee\n\n## Let's setup a template, add some variables, and render it.\n\nTemplate = require \"./template\"\n\nelement = Template\n  name: \"Yo Yo Ma\"\n  interests: [\"parties\", \"violins\", \"yolo\"]\n\ndocument.body.appendChild element\n\n## Now we'll attach `style.styl` to it\n\nstyle = document.createElement \"style\"\nstyle.textContent = require \"./style\"\ndocument.head.appendChild style\n\n\n\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\n#Here we require a model and a template then combine them to create an element\n#to add to the DOM that let's us search Flikr using their JSON API.\n\nFlickr = require \"./flickr\"\nFlickrTemplate = require \"./templates/flickr\"\ndocument.body.appendChild FlickrTemplate Flickr()\n",
+      "content": "# main.coffee\n\n## Let's setup a template, add some variables, and render it.\n\nTemplate = require \"./template\"\n\nelement = Template\n  name: \"Yo Yo Ma\"\n  interests: [\"parties\", \"violins\", \"yolo\"]\n\ndocument.body.appendChild element\n\n## Now we'll attach `style.styl` to it\n\nstyle = document.createElement \"style\"\nstyle.textContent = require \"./style\"\ndocument.head.appendChild style\n\n\n\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\n#Here we require a model and a template then combine them to create \n# an element to add to the DOM that let's us search Flickr using their JSON API.\n\nFlickr = require \"./flickr\"\nFlickrTemplate = require \"./templates/flickr\"\ndocument.body.appendChild FlickrTemplate Flickr()\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -186,7 +186,7 @@
     },
     "style.styl": {
       "path": "style.styl",
-      "content": "*\n  box-sizing: border-box\n\nhtml, body\n  height: 100%\n\nbody\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif\n  font-weight: 300\n  color: #335533\n  margin: 1em\n  background: #3cc\n\nh1\n  display: inline-block\n  background-color: #eee\n  color: rgb(161,55,161)\n\nh2\n  background-color: rgb(161,55,161)\n  color: #ccc\n\nform\n  margin-top: 20px",
+      "content": "*\n  box-sizing: border-box\n\nhtml, body\n  height: 100%\n\nbody\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif\n  font-weight: 300\n  color: #335533\n  margin: 1em\n  background: #3cc\n\nh1\n  display: inline-block\n  background-color: #eee\n  color: rgb(161,55,161)\n\nh2\n  background-color: rgb(161,55,161)\n  color: #ccc\n\nform\n  margin-top: 20px\n",
       "mode": "100644",
       "type": "blob"
     },
