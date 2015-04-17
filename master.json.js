@@ -20,7 +20,7 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "style.styl": {
       "path": "style.styl",
-      "content": "*\n  box-sizing: border-box\n\nhtml, body\n  height: 100%\n\nbody\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif\n  font-weight: 300\n  color: #335533\n  margin: 1em\n  background: #3cc\n\nh1\n  transform: rotate(-90deg)\n  display: inline-block\n  box-shadow: 13px 0px 30px 30px rgba(238,238,238,.5)\n  background-color: #eee\n  color: rgb(161,55,161)\n\nh2\n  box-shadow: 10px 10px 35px 0px rgba(161,55,161,1)\n  background-color: rgb(161,55,161)\n  color: #ccc\n",
+      "content": "*\n  box-sizing: border-box\n\nhtml, body\n  height: 100%\n\nbody\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif\n  font-weight: 300\n  color: #335533\n  margin: 1em\n  background: #3cc\n\nh1\n  display: inline-block\n  background-color: #eee\n  color: rgb(161,55,161)\n\nh2\n  background-color: rgb(161,55,161)\n  color: #ccc\n\nform\n  margin-top: 20px",
       "mode": "100644",
       "type": "blob"
     },
@@ -61,7 +61,7 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "style": {
       "path": "style",
-      "content": "module.exports = \"* {\\n  -ms-box-sizing: border-box;\\n  -moz-box-sizing: border-box;\\n  -webkit-box-sizing: border-box;\\n  box-sizing: border-box;\\n}\\n\\nhtml,\\nbody {\\n  height: 100%;\\n}\\n\\nbody {\\n  font-family: \\\"HelveticaNeue-Light\\\", \\\"Helvetica Neue Light\\\", \\\"Helvetica Neue\\\", Helvetica, Arial, \\\"Lucida Grande\\\", sans-serif;\\n  font-weight: 300;\\n  color: #335533;\\n  margin: 1em;\\n  background: #3cc;\\n}\\n\\nh1 {\\n  display: inline-block;\\n  box-shadow: 13px 0px 30px 30px rgba(238, 238, 238, .5);\\n  background-color: #eee;\\n  color: rgb(161,55,161);\\n  -ms-transform: rotate(-90deg);\\n  -moz-transform: rotate(-90deg);\\n  -webkit-transform: rotate(-90deg);\\n  transform: rotate(-90deg);\\n}\\n\\nh2 {\\n  box-shadow: 10px 10px 35px 0px rgba(161, 55, 161, 1);\\n  background-color: rgb(161,55,161);\\n  color: #ccc;\\n}\";",
+      "content": "module.exports = \"* {\\n  -ms-box-sizing: border-box;\\n  -moz-box-sizing: border-box;\\n  -webkit-box-sizing: border-box;\\n  box-sizing: border-box;\\n}\\n\\nhtml,\\nbody {\\n  height: 100%;\\n}\\n\\nbody {\\n  font-family: \\\"HelveticaNeue-Light\\\", \\\"Helvetica Neue Light\\\", \\\"Helvetica Neue\\\", Helvetica, Arial, \\\"Lucida Grande\\\", sans-serif;\\n  font-weight: 300;\\n  color: #335533;\\n  margin: 1em;\\n  background: #3cc;\\n}\\n\\nh1 {\\n  display: inline-block;\\n  background-color: #eee;\\n  color: rgb(161,55,161);\\n}\\n\\nh2 {\\n  background-color: rgb(161,55,161);\\n  color: #ccc;\\n}\\n\\nform {\\n  margin-top: 20px;\\n}\";",
       "type": "blob"
     },
     "template": {
