@@ -2,6 +2,9 @@
   %h1 Hello
   %h1 hello world
   %p= @name
-  
   %h2 Welcome...
   %p to the future!
+
+  %p= @interests
+  - @interests.forEach |interest|
+    %p= interest
