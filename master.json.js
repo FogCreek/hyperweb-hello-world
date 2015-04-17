@@ -26,13 +26,13 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "template.haml": {
       "path": "template.haml",
-      "content": "%div\n  %h1 Hello\n  %h1 hello world\n  %p= @name\n  %h2 Welcome...\n  %p to the future!\n\n%div\n  - @interests.each  (interest) ->\n    %p= interest\n",
+      "content": "%main\n  %h1 hello @name\n  %h2 Flickr your favorite things or just search\n  - @interests.forEach  (interest) ->\n    %li= interest\n",
       "mode": "100644",
       "type": "blob"
     },
     "templates/flickr.haml": {
       "path": "templates/flickr.haml",
-      "content": ".flickr\n  %h2 Flickr Search Demo\n  %form(@submit)\n    %input(value=@query)\n    %button Go\n  .results\n    - @urls.forEach (url) ->\n      %img(src=url)\n",
+      "content": ".flickr\n  %form(@submit)\n    %input(value=@query)\n    %button Go\n  .results\n    - @urls.forEach (url) ->\n      %img(src=url)\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -66,12 +66,12 @@ window["FogCreek/hyperweb-hello-world:master"]({
     },
     "template": {
       "path": "template",
-      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {}, function(__root) {\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"Hello\\n\");\n      }));\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"hello world\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.name);\n      }));\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Welcome...\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(\"to the future!\\n\");\n      }));\n    }));\n    __root.buffer(__root.element(\"div\", this, {}, function(__root) {\n      this.interests.each(function(interest) {\n        return __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n          __root.buffer(interest);\n        }));\n      });\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
+      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"main\", this, {}, function(__root) {\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"hello @name\\n\");\n      }));\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Flickr your favorite things or just search\\n\");\n      }));\n      this.interests.forEach(function(interest) {\n        return __root.buffer(__root.element(\"li\", this, {}, function(__root) {\n          __root.buffer(interest);\n        }));\n      });\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
       "type": "blob"
     },
     "templates/flickr": {
       "path": "templates/flickr",
-      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {\n      \"class\": [\"flickr\"]\n    }, function(__root) {\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Flickr Search Demo\\n\");\n      }));\n      __root.buffer(__root.element(\"form\", this, {\n        \"submit\": this.submit\n      }, function(__root) {\n        __root.buffer(__root.element(\"input\", this, {\n          \"value\": this.query\n        }, function(__root) {}));\n        __root.buffer(__root.element(\"button\", this, {}, function(__root) {\n          __root.buffer(\"Go\\n\");\n        }));\n      }));\n      __root.buffer(__root.element(\"div\", this, {\n        \"class\": [\"results\"]\n      }, function(__root) {\n        this.urls.forEach(function(url) {\n          return __root.buffer(__root.element(\"img\", this, {\n            \"src\": url\n          }, function(__root) {}));\n        });\n      }));\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
+      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {\n      \"class\": [\"flickr\"]\n    }, function(__root) {\n      __root.buffer(__root.element(\"form\", this, {\n        \"submit\": this.submit\n      }, function(__root) {\n        __root.buffer(__root.element(\"input\", this, {\n          \"value\": this.query\n        }, function(__root) {}));\n        __root.buffer(__root.element(\"button\", this, {}, function(__root) {\n          __root.buffer(\"Go\\n\");\n        }));\n      }));\n      __root.buffer(__root.element(\"div\", this, {\n        \"class\": [\"results\"]\n      }, function(__root) {\n        this.urls.forEach(function(url) {\n          return __root.buffer(__root.element(\"img\", this, {\n            \"src\": url\n          }, function(__root) {}));\n        });\n      }));\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
       "type": "blob"
     },
     "test/test": {
