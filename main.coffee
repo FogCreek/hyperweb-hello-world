@@ -14,8 +14,10 @@ document.body.appendChild element
 
 style = document.createElement "style"
 style.textContent = require "./style"
-
 document.head.appendChild style
+
+
+
 
 ## Persisting Application Data Across Reloads
 

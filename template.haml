@@ -4,7 +4,5 @@
   %p= @name
   %h2 Welcome...
   %p to the future!
-
-  %p= @interests
-  - @interests.forEach |interest|
+  @interests.each  (interest) ->
     %p= interest
