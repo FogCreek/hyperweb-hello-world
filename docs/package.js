@@ -174,7 +174,7 @@
     },
     "main.coffee.md": {
       "path": "main.coffee.md",
-      "content": "# Hello World\n\nWelcome to HyperWeb. Where you can create clientside applications easier and\nbetter than ever before.\n\n    # main.coffee.md\n\n## Require\n\nYou can require other files just like you do in Node or other server-side\nenvironments.\n\nHere we are requiring a Hamlet template file.\n\n    Template = require \"./template\"\n\n## Templates\n\nA template is a function that returns a DOM node when invoked. Here we are\npassing data for the template to fill in.\n\n    element = Template\n      name: \"Dudester\"\n\n## Writing to the HTML Document\n\nThe simplest way to add to the document is to append a child to the body node.\n\n    document.body.appendChild element\n\n## Styling the HTML Document\n\nTo apply a stylesheet to your document you can create a `style` node.\n\nHere we use a .styl file, which compiles into css text that we then attach to\nthe document head.\n\nYou can modify the style yourself in `style.styl`\n\n    style = document.createElement \"style\"\n    style.textContent = require \"./style\"\n\n    document.head.appendChild style\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\nHere we require a model and a template then combine them to create an element\nto add to the DOM that let's us search Flikr using their JSON API.\n\n    Flickr = require \"./flickr\"\n    FlickrTemplate = require \"./templates/flickr\"\n    document.body.appendChild FlickrTemplate Flickr()\n",
+      "content": "# Hello World\n\n# Welcome to HyperWeb. Where you can create clientside applications easier and\n# better than ever before.\n\n    # main.coffee.md\n\n## Require\n\n# You can require other files just like you do in Node or other server-side\n# environments.\n\n# Here we are requiring a Hamlet template file.\n\n    Template = require \"./template\"\n\n## Templates\n\nA template is a function that returns a DOM node when invoked. Here we are\npassing data for the template to fill in.\n\n    element = Template\n      name: \"Dudester\"\n\n## Writing to the HTML Document\n\nThe simplest way to add to the document is to append a child to the body node.\n\n    document.body.appendChild element\n\n## Styling the HTML Document\n\nTo apply a stylesheet to your document you can create a `style` node.\n\nHere we use a .styl file, which compiles into css text that we then attach to\nthe document head.\n\nYou can modify the style yourself in `style.styl`\n\n    style = document.createElement \"style\"\n    style.textContent = require \"./style\"\n\n    document.head.appendChild style\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\nHere we require a model and a template then combine them to create an element\nto add to the DOM that let's us search Flikr using their JSON API.\n\n    Flickr = require \"./flickr\"\n    FlickrTemplate = require \"./templates/flickr\"\n    document.body.appendChild FlickrTemplate Flickr()\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -252,7 +252,7 @@
     }
   },
   "progenitor": {
-    "url": "http://hyperweb.space/collaborative-editing/?repo=STRd6/hello-world"
+    "url": "http://hyperweb.space/?repo=FogCreek/hyperweb-hello-world"
   },
   "entryPoint": "main",
   "remoteDependencies": [
@@ -261,11 +261,11 @@
   "repository": {
     "branch": "master",
     "default_branch": "master",
-    "full_name": "STRd6/hello-world",
+    "full_name": "FogCreek/hyperweb-hello-world",
     "homepage": null,
     "description": "Hello World",
-    "html_url": "https://github.com/STRd6/hello-world",
-    "url": "https://api.github.com/repos/STRd6/hello-world",
+    "html_url": "https://github.com/FogCreek/hyperweb-hello-world",
+    "url": "https://api.github.com/repos/FogCreek/hyperweb-hello-world",
     "publishBranch": "gh-pages"
   },
   "dependencies": {
