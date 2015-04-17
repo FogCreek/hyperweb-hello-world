@@ -172,9 +172,9 @@
       "mode": "100644",
       "type": "blob"
     },
-    "main.coffee.md": {
-      "path": "main.coffee.md",
-      "content": "# Hello World\n\n# Welcome to HyperWeb. Where you can create clientside applications easier and\n# better than ever before.\n\n    # main.coffee.md\n\n## Require\n\n# You can require other files just like you do in Node or other server-side\n# environments.\n\n# Here we are requiring a Hamlet template file.\n\n    Template = require \"./template\"\n\n## Templates\n\nA template is a function that returns a DOM node when invoked. Here we are\npassing data for the template to fill in.\n\n    element = Template\n      name: \"Dudester\"\n\n## Writing to the HTML Document\n\nThe simplest way to add to the document is to append a child to the body node.\n\n    document.body.appendChild element\n\n## Styling the HTML Document\n\nTo apply a stylesheet to your document you can create a `style` node.\n\nHere we use a .styl file, which compiles into css text that we then attach to\nthe document head.\n\nYou can modify the style yourself in `style.styl`\n\n    style = document.createElement \"style\"\n    style.textContent = require \"./style\"\n\n    document.head.appendChild style\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\nHere we require a model and a template then combine them to create an element\nto add to the DOM that let's us search Flikr using their JSON API.\n\n    Flickr = require \"./flickr\"\n    FlickrTemplate = require \"./templates/flickr\"\n    document.body.appendChild FlickrTemplate Flickr()\n",
+    "main.coffee": {
+      "path": "main.coffee",
+      "content": "# main.coffee\n\n## Let's setup a template, add some variables, and render it.\n\nTemplate = require \"./template\"\n\nelement = Template\n  name: \"Yo Yo Ma\"\n  interests: [\"parties\", \"violins\", \"yolo\"]\n\ndocument.body.appendChild element\n\n## Now we'll attach `style.styl` to it\n\nstyle = document.createElement \"style\"\nstyle.textContent = require \"./style\"\n\ndocument.head.appendChild style\n\n## Persisting Application Data Across Reloads\n\n## Flickr Search\n\n#Here we require a model and a template then combine them to create an element\n#to add to the DOM that let's us search Flikr using their JSON API.\n\nFlickr = require \"./flickr\"\nFlickrTemplate = require \"./templates/flickr\"\ndocument.body.appendChild FlickrTemplate Flickr()\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -186,13 +186,13 @@
     },
     "style.styl": {
       "path": "style.styl",
-      "content": "*\n  box-sizing: border-box\n\nhtml, body\n  height: 100%\n\nbody\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif\n  font-weight: 300\n  color: #335533\n  margin: 1em\n  background: #3cc\n  \nh1\n  transform: rotate(-90deg) \n  display: inline-block\n  box-shadow: 13px 0px 30px 30px rgba(238,238,238,.5)\n  background-color: #eee\n  color: rgb(161,55,161)\n\nh2\n  box-shadow: 10px 10px 35px 0px rgba(161,55,161,1)\n  background-color: rgb(161,55,161)\n  color: #ccc\n",
+      "content": "*\n  box-sizing: border-box\n\nhtml, body\n  height: 100%\n\nbody\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif\n  font-weight: 300\n  color: #335533\n  margin: 1em\n  background: #3cc\n\nh1\n  transform: rotate(-90deg)\n  display: inline-block\n  box-shadow: 13px 0px 30px 30px rgba(238,238,238,.5)\n  background-color: #eee\n  color: rgb(161,55,161)\n\nh2\n  box-shadow: 10px 10px 35px 0px rgba(161,55,161,1)\n  background-color: rgb(161,55,161)\n  color: #ccc\n",
       "mode": "100644",
       "type": "blob"
     },
     "template.haml": {
       "path": "template.haml",
-      "content": "%div\n  %h1 Hello\n  %h1 hello world\n  %p= @name\n  \n  %h2 Welcome...\n  %p to the future!\n",
+      "content": "%div\n  %h1 Hello\n  %h1 hello world\n  %p= @name\n  %h2 Welcome...\n  %p to the future!\n\n  %p= @interests\n  - @interests.forEach |interest|\n    %p= interest\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -217,7 +217,7 @@
     },
     "main": {
       "path": "main",
-      "content": "(function() {\n  var Flickr, FlickrTemplate, Template, element, style;\n\n  Template = require(\"./template\");\n\n  element = Template({\n    name: \"Dudester\"\n  });\n\n  document.body.appendChild(element);\n\n  style = document.createElement(\"style\");\n\n  style.textContent = require(\"./style\");\n\n  document.head.appendChild(style);\n\n  Flickr = require(\"./flickr\");\n\n  FlickrTemplate = require(\"./templates/flickr\");\n\n  document.body.appendChild(FlickrTemplate(Flickr()));\n\n}).call(this);\n",
+      "content": "(function() {\n  var Flickr, FlickrTemplate, Template, element, style;\n\n  Template = require(\"./template\");\n\n  element = Template({\n    name: \"Yo Yo Ma\",\n    interests: [\"parties\", \"violins\", \"yolo\"]\n  });\n\n  document.body.appendChild(element);\n\n  style = document.createElement(\"style\");\n\n  style.textContent = require(\"./style\");\n\n  document.head.appendChild(style);\n\n  Flickr = require(\"./flickr\");\n\n  FlickrTemplate = require(\"./templates/flickr\");\n\n  document.body.appendChild(FlickrTemplate(Flickr()));\n\n}).call(this);\n",
       "type": "blob"
     },
     "pixie": {
@@ -232,7 +232,7 @@
     },
     "template": {
       "path": "template",
-      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {}, function(__root) {\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"Hello\\n\");\n      }));\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"hello world\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.name);\n      }));\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Welcome...\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(\"to the future!\\n\");\n      }));\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
+      "content": "module.exports = function(data) {\n  \"use strict\";\n  return (function() {\n    var __root;\n    __root = require(\"/lib/hamlet-runtime\")(this);\n    __root.buffer(__root.element(\"div\", this, {}, function(__root) {\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"Hello\\n\");\n      }));\n      __root.buffer(__root.element(\"h1\", this, {}, function(__root) {\n        __root.buffer(\"hello world\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.name);\n      }));\n      __root.buffer(__root.element(\"h2\", this, {}, function(__root) {\n        __root.buffer(\"Welcome...\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(\"to the future!\\n\");\n      }));\n      __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(this.interests);\n      }));\n      this.interests.forEach | interest | __root.buffer(__root.element(\"p\", this, {}, function(__root) {\n        __root.buffer(interest);\n      }));\n    }));\n    return __root.root;\n  }).call(data);\n};\n",
       "type": "blob"
     },
     "templates/flickr": {
@@ -262,8 +262,8 @@
     "branch": "master",
     "default_branch": "master",
     "full_name": "FogCreek/hyperweb-hello-world",
-    "homepage": null,
-    "description": "Hello World",
+    "homepage": "",
+    "description": "The Hello World of the Future...  *starwipe*",
     "html_url": "https://github.com/FogCreek/hyperweb-hello-world",
     "url": "https://api.github.com/repos/FogCreek/hyperweb-hello-world",
     "publishBranch": "gh-pages"
