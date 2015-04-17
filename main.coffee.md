@@ -1,16 +1,16 @@
 # Hello World
 
-Welcome to HyperWeb. Where you can create clientside applications easier and
-better than ever before.
+# Welcome to HyperWeb. Where you can create clientside applications easier and
+# better than ever before.
 
     # main.coffee.md
 
 ## Require
 
-You can require other files just like you do in Node or other server-side
-environments.
+# You can require other files just like you do in Node or other server-side
+# environments.
 
-Here we are requiring a Hamlet template file.
+# Here we are requiring a Hamlet template file.
 
     Template = require "./template"
 
