@@ -23,8 +23,8 @@ document.head.appendChild style
 
 ## Flickr Search
 
-#Here we require a model and a template then combine them to create an element
-#to add to the DOM that let's us search Flikr using their JSON API.
+#Here we require a model and a template then combine them to create 
+# an element to add to the DOM that let's us search Flickr using their JSON API.
 
 Flickr = require "./flickr"
 FlickrTemplate = require "./templates/flickr"
