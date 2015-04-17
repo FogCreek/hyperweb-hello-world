@@ -4,5 +4,7 @@
   %p= @name
   %h2 Welcome...
   %p to the future!
-  @interests.each  (interest) ->
+
+%div
+  - @interests.each  (interest) ->
     %p= interest
