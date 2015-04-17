@@ -1,4 +1,4 @@
-# Welcome to the world of tomorrow  🌠
+# welcome to the world of tomorrow  🌠
 
 A simple example showing:
 - module loading
