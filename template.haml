@@ -1,10 +1,5 @@
-%div
-  %h1 Hello
-  %h1 hello world
-  %p= @name
-  %h2 Welcome...
-  %p to the future!
-
-%div
-  - @interests.each  (interest) ->
-    %p= interest
+%main
+  %h1 hello @name
+  %h2 Flickr your favorite things or just search
+  - @interests.forEach  (interest) ->
+    %li= interest
